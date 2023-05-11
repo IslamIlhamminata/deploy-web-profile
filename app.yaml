@@ -3,19 +3,18 @@ api_version: 1
 threadsafe: true
 
 handlers:
+- url: /
+  static_files: index.html
+  upload: index.html
 
-url: /
-static_files: index.html
-upload: index.html
+- url: /(.)
+  static_files: assets/\1
+  upload: assets/(.)
 
-url: /(.)
-static_files: assets/\1
-upload: assets/(.)
+- url: /assets/styles/style.css
+  static_files: assets/styles/style.css
+  upload: assets/styles/style.css
 
-url: /assets/styles/style.css
-static_files: assets/styles/style.css
-upload: assets/styles/style.css
-
-url: /(..(gif|png|jpg))$
-static_files: assets/\1
-upload: assets/(..(gif|png|jpg))$
+- url: /(..(gif|png|jpg))$
+  static_files: assets/\1
+  upload: assets/(..(gif|png|jpg))$
